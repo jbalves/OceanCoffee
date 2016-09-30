@@ -10,4 +10,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    public void submitOreder(){
+
+    }
+
+    public void displayPrice(){
+
+    }
+    public void increment(){
+
+    }
+    public void decrement(){
+
+    }
+    public void displayQuantity(){
+
+    }
+    public void createOrderSummary(){
+
+    }
+    public int calculatePrice(int quantity, int priceByCup){
+        return quantity*priceByCup;
+
+    }
 }
