@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.firebase.client.Firebase;
+
 public class MainActivity extends AppCompatActivity {
 
     private int quantity = 1;
@@ -14,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Firebase.setAndroidContext(this);
     }
 
     public void submitOrder(View view){
@@ -24,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         TextView summaryView = (TextView) findViewById(R.id.summaryOrder);
 
         summaryView.setText(summary);
+
+        Firebase myFirebaseRef = new Firebase("https://oceancoffe-5f9d1.firebaseio.com/");
+
+        myFirebaseRef.child("message").setValue(summary);
     }
 
     public void displayPrice(){

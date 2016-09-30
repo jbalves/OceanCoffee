@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "250649616619",
+    "firebase_url": "https://oceancoffe-5f9d1.firebaseio.com",
+    "project_id": "oceancoffe-5f9d1",
+    "storage_bucket": "oceancoffe-5f9d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250649616619:android:e01cd3d8a33e2bca",
+        "android_client_info": {
+          "package_name": "com.example.aluno.oceancoffee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "250649616619-ude537ju1grfceprmtmgttoi2p3c85si.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aluno.oceancoffee",
+            "certificate_hash": "BE6B4464CC312968EE6704EC7884CBBF8D334011"
+          }
+        },
+        {
+          "client_id": "250649616619-aj81ve4ptsrn08j1ujb64jno4ej4dpup.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbNsUSe1ORRop1X7vFjmtyZ5fxoWj4DAI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250649616619-aj81ve4ptsrn08j1ujb64jno4ej4dpup.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
