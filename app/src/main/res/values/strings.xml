@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">OceanCoffee</string>
+    <string name="name_hint">Ocean Coffee</string>
+    <string name="toppings">toppings</string>
+    <string name="whipped_cream">whipped cream</string>
+    <string name="chocolate">chocolate</string>
+    <string name="nome">Nome: Jeferson Barros</string>
+    <string name="quantidade">"\nQuantidade: "</string>
+    <string name="total">"\nTotal: "</string>
+    <string name="thanks">\nThank\'s!</string>
+    <string name="quantity">Quantidade</string>
 </resources>
