@@ -1,5 +1,7 @@
 package com.example.aluno.oceancoffee;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,8 +13,12 @@ import android.widget.TextView;
 
 import com.firebase.client.Firebase;
 
+import static android.content.Intent.ACTION_VIEW;
+
 public class MainActivity extends AppCompatActivity {
 
+    private static final int MIN_OF_CUP = 1;
+    private static final int MAX_OF_CUP = 100;
     private int quantity = 1;
     private final int PRICE_BY_CUP = 5;
 
@@ -25,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
+        Firebase myFirebaseRef = new Firebase("https://oceancoffe-5f9d1.firebaseio.com/");
+
         CheckBox chocolateView = (CheckBox) findViewById(R.id.chocolate);
         CheckBox cremeView = (CheckBox) findViewById(R.id.whippedCream);
 
@@ -32,49 +40,50 @@ public class MainActivity extends AppCompatActivity {
         boolean hasCreme = cremeView.isChecked();
 
         EditText nomeView = (EditText) findViewById(R.id.name);
-
         String nome = nomeView.getText().toString();
-
-        int price = calculatePrice(quantity, PRICE_BY_CUP, hasChocolate, hasCreme);
         String summary;
+        int price;
+
+        price = calculatePrice(quantity, PRICE_BY_CUP, hasChocolate, hasCreme);
 
         TextView summaryView = (TextView) findViewById(R.id.summaryOrder);
+        summary = createOrderSummary(quantity, price, hasChocolate, hasCreme, nome);
+        summaryView.setText(summary);
 
-
-        Firebase myFirebaseRef = new Firebase("https://oceancoffe-5f9d1.firebaseio.com/");
-
-
+        myFirebaseRef.child("message").setValue(summary);
 
         Log.d("Debug", "O preço é : " + price);
-
-
-
-
         Log.d("Debug", "Possui chocolate? " + hasChocolate);
         Log.d("Debug", "Possui creme? " + hasCreme);
 
-        summary = createOrderSummary(quantity, price, hasChocolate, hasCreme, nome);
-        summaryView.setText(summary);
-        myFirebaseRef.child("message").setValue(summary);
+        Intent intent = new Intent(ACTION_VIEW);
+        intent.setData(Uri.parse("sms:984474596"));
+        intent.putExtra("sms_body", summary);
 
-
-
+        if (intent.resolveActivity(getPackageManager())!= null) {
+            startActivity(intent);
+        }
     }
 
     public void displayPrice(){
 
     }
 
-    public void increment(View view){
-
-    }
-
     public void decrement(View view){
-
+        if (quantity <= MIN_OF_CUP) return;
+        quantity--;
+        displayQuantity(quantity);
     }
 
-    public void displayQuantity(){
+    public void increment(View view){
+        if (quantity >= MAX_OF_CUP) return;
+        quantity ++;
+        displayQuantity(quantity);
+    }
 
+    public void displayQuantity(int quantity){
+        TextView quantityView = (TextView) findViewById(R.id.quantity_text_view);
+        quantityView.setText(""+ this.quantity);
     }
 
     private String createOrderSummary(int quantity, int price, boolean hasChocolate, boolean hasCreme, String nome){
