@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,8 +27,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Firebase.setAndroidContext(this);
+        //Enable transitions
+        //getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+        //setContentView(R.layout.activity_main);
     }
 
     public void submitOrder(View view) {
