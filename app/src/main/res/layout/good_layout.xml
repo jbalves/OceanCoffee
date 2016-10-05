@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/back"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Botao final confirmar-->
+    <LinearLayout
+        android:background="#FFEB3B"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+        <ImageView
+            android:src="@drawable/ic_done_black_36dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:onClick="submitOrder"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:background="@null"
+            android:textColor="@android:color/white"
+            android:ellipsize="start"
+            android:gravity="center_horizontal"
+            android:hint="ADD NOME"
+            android:textColorHint="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name" />
+
+        <View
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <!-- Botao check box inicio-->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="invisible"
+                    android:id="@+id/ivCreme"
+                    android:src="@drawable/ic_done_branco"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:padding="8dp"
+                    android:id="@+id/tvCreme"
+                    android:width="150dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:text="CREME"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <View
+                android:background="#fff"
+                android:layout_width="1dp"
+                android:layout_height="60dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="invisible"
+                    android:id="@+id/ivChocolate"
+                    android:src="@drawable/ic_done_branco"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:padding="8dp"
+                    android:id="@+id/tvChocolate"
+                    android:textColor="@android:color/white"
+                    android:text="CHOCOLATE"
+                    android:gravity="center"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Botao check fim -->
+
+        <View
+            android:layout_marginTop="20dp"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:onClick="decrement"
+                android:src="@drawable/ic_remove_white_48dp"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/quantity_text_view"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                android:text="1"
+                android:textSize="50sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:onClick="increment"
+                android:src="@drawable/ic_add_white_48dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:padding="16dp"
+            android:layout_marginTop="20dp"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:id="@+id/tvNomeUsuario"
+                android:text="Nome do Usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/tvQuantidade"
+                android:layout_below="@+id/tvNomeUsuario"
+                android:text="Quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvQuantidadeValor"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvNomeUsuario"
+                android:text="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/tvComplemento"
+                android:layout_below="@+id/tvQuantidade"
+                android:text="Complementos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvComplementoValor"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvQuantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvPreco"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/tvComplemento"
+                android:text="Preco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvPrecoValor"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvComplemento"
+                android:text="5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

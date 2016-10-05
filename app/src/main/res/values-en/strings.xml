@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ocean Coffee</string>
+    <string name="add_chocolate">Have Chocolate ?</string>
+    <string name="add_creme">Have Cream ?</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="name_hint">Add Name</string>
+    <string name="nome">Name:</string>
+    <string name="quantidade">"Quantity: "</string>
+    <string name="quantity">Quantity</string>
+    <string name="thanks">Thank\'s</string>
+    <string name="toppings">Toppings</string>
+    <string name="total">Totaly</string>
+    <string name="whipped_cream">whipped cream</string>
+</resources>

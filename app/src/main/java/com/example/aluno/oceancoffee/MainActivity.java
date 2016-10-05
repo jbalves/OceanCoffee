@@ -62,8 +62,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Debug", "Possui creme? " + hasCreme);
 
         Intent intent = new Intent(ACTION_VIEW);
-        intent.setData(Uri.parse("sms:984474596"));
-        intent.putExtra("sms_body", summary);
+        intent.setData(Uri.parse("http://www.google.com.br"));
+        //intent.setData(Uri.parse("sms:984474596"));
+        //intent.putExtra("sms_body", summary);
 
         if (intent.resolveActivity(getPackageManager())!= null) {
             startActivity(intent);

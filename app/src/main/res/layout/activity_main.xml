@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:textColor="@android:color/white"/>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -95,7 +95,8 @@
                     android:onClick="decrement"
                     android:textSize="40sp"
                     android:background="@android:color/transparent"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentLeft="true"/>
 
                 <TextView
                     android:id="@+id/quantity_text_view"
@@ -106,7 +107,8 @@
                     android:text="1"
                     android:textColor="@android:color/white"
                     android:textSize="40sp"
-                    android:padding="20dp"/>
+                    android:padding="20dp"
+                    android:layout_toRightOf="@id/minus"/>
 
                 <Button
                     android:id="@+id/plus"
@@ -116,9 +118,10 @@
                     android:onClick="increment"
                     android:textSize="40sp"
                     android:background="@android:color/transparent"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentRight="true"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
