@@ -14,17 +14,45 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/name_hint"
+                android:textSize="40sp"
                 android:textColorHint="@android:color/white"
                 android:id="@+id/name"
                 android:inputType="text"
                 android:imeOptions="actionDone"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:background="@android:color/darker_gray"
+                android:textAlignment="center"
+                android:allowUndo="false"
+                android:fontFamily="casual" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cremeButton"
+                    android:layout_width="191dp"
+                    android:layout_height="140dp"
+                    android:background="@mipmap/whipped_cream"
+                    android:width="0dp"/>
+
+                <Button
+                    android:layout_width="191dp"
+                    android:layout_height="140dp"
+                    android:background="@mipmap/chocolate"
+                    android:layout_toRightOf="@id/cremeButton"
+                    android:width="0dp"/>
+
+
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -100,12 +128,14 @@
                 android:textColor="@android:color/white"/>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Order"
                 android:onClick="submitOrder"
-                android:id="@+id/button" />
+                android:id="@+id/button"
+                android:layout_gravity="bottom"
+                android:layout_weight="3.94" />
         </LinearLayout>
 
     </LinearLayout>

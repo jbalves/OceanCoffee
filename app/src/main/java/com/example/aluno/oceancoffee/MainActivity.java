@@ -1,6 +1,7 @@
 package com.example.aluno.oceancoffee;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         //Enable transitions
         //getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         //setContentView(R.layout.activity_main);
+
     }
 
     public void submitOrder(View view) {
