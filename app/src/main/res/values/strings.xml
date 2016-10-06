@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OceanCoffee</string>
+    <string name="app_name">Ocean Coffee</string>
     <string name="name_hint">Add Nome</string>
     <string name="toppings">Cobertura</string>
     <string name="whipped_cream">whipped cream</string>

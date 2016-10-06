@@ -2,13 +2,13 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@drawable/back"
+    android:background="@drawable/coffee_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!-- Botao final confirmar-->
     <LinearLayout
-        android:background="#FFEB3B"
+        android:background="#795548"
         android:layout_alignParentBottom="true"
         android:gravity="center"
         android:layout_width="match_parent"
