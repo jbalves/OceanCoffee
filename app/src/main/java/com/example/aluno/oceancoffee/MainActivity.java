@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.firebase.client.Firebase;
 
+import java.util.ArrayList;
+
 import static android.content.Intent.ACTION_VIEW;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,16 +25,19 @@ public class MainActivity extends AppCompatActivity {
     private static final int MAX_OF_CUP = 100;
     private int quantity = 1;
     private final int PRICE_BY_CUP = 5;
+    //Cria a lista depedidos
+    private ArrayList<Pedido> pedidos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.good_layout);
-        //setContentView(R.layout.activity_main);
+        //setContentView(R.layout.good_layout);
+        setContentView(R.layout.activity_main);
         Firebase.setAndroidContext(this);
         //Enable transitions
         //getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         //setContentView(R.layout.activity_main);
+        pedidos = new ArrayList<>();
 
     }
 
@@ -56,20 +61,32 @@ public class MainActivity extends AppCompatActivity {
         summary = createOrderSummary(quantity, price, hasChocolate, hasCreme, nome);
         summaryView.setText(summary);
 
+        Pedido pedido = new Pedido(quantity, price, hasCreme, hasChocolate, nome);
+
+        //Adiciona o pedido na lista
+        pedidos.add(pedido);
+        int cont = 0;
+
+        for (Pedido p: pedidos) {
+            Log.d("Debug", "Pedido de número : " + cont);
+            Log.d("Debug", "O preço é : " + p.getPreco());
+            Log.d("Debug", "Possui chocolate? " + p.isHasChocolate());
+            Log.d("Debug", "Possui creme? " + p.isHasCreme());
+            cont++;
+        }
+
         myFirebaseRef.child("message").setValue(summary);
 
-        Log.d("Debug", "O preço é : " + price);
-        Log.d("Debug", "Possui chocolate? " + hasChocolate);
-        Log.d("Debug", "Possui creme? " + hasCreme);
 
-        Intent intent = new Intent(ACTION_VIEW);
-        intent.setData(Uri.parse("http://www.google.com.br"));
+
+       // Intent intent = new Intent(ACTION_VIEW);
+        //intent.setData(Uri.parse("http://www.google.com.br"));
         //intent.setData(Uri.parse("sms:984474596"));
         //intent.putExtra("sms_body", summary);
 
-        if (intent.resolveActivity(getPackageManager())!= null) {
-            startActivity(intent);
-        }
+        //if (intent.resolveActivity(getPackageManager())!= null) {
+       //     startActivity(intent);
+        //}
     }
 
     public void displayPrice(){
